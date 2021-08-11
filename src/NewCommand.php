@@ -117,15 +117,14 @@ class NewCommand extends Command
         }
 
         $process = Process::fromShellCommandline(implode(' && ', $commands));
+        $process->setTimeout(240);
 
         if ('\\' !== DIRECTORY_SEPARATOR && file_exists('/dev/tty') && is_readable('/dev/tty')) {
             $process->setTty(true);
         }
 
-        $output = $this->output;
-
-        $process->run(function ($type, $line) use ($output) {
-            $output->write($line);
+        $process->run(function ($type, $line) {
+            $this->output->write($line);
         });
     }
 
