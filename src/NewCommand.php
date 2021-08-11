@@ -109,15 +109,9 @@ class NewCommand extends Command
      * @return void
      */
     public function runCommands($commands)
-    {
-        if ($this->input->getOption('no-ansi')) {
-            $commands = array_map(function ($value) {
-                return $value . ' --no-ansi';
-            }, $commands);
-        }
-
+    {x
         $process = Process::fromShellCommandline(implode(' && ', $commands));
-        $process->setTimeout(240);
+        $process->setTimeout(300);
 
         if ('\\' !== DIRECTORY_SEPARATOR && file_exists('/dev/tty') && is_readable('/dev/tty')) {
             $process->setTty(true);
