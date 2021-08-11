@@ -109,7 +109,7 @@ class NewCommand extends Command
      * @return void
      */
     public function runCommands($commands)
-    {x
+    {
         $process = Process::fromShellCommandline(implode(' && ', $commands));
         $process->setTimeout(300);
 
