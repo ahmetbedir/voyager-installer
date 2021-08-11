@@ -1,0 +1,37 @@
+{
+  "name": "ahmetbedir/voyager-installer",
+  "description": "Voyager application installer.",
+  "keywords": [
+    "laravel",
+    "voyager",
+    "installer"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Ahmet Bedir",
+      "email": "a_bedir43@hotmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Voyager\\Installer\\Console\\": "src/"
+    }
+  },
+  "require": {
+    "guzzlehttp/guzzle": "~6.0",
+    "symfony/console": "^5.3",
+    "symfony/filesystem": "~3.0|~4.0|^5.3",
+    "symfony/process": "~3.0|~4.0|^5.3",
+    "vlucas/phpdotenv": "^5.3"
+  },
+  "bin": [
+    "bin/voyager"
+  ],
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "require-dev": {}
+}
